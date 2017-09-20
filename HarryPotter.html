@@ -33,7 +33,7 @@
             margin-bottom: 50px;
         }
 
-        #rcol-head
+        .rcol-head
         {
             margin-bottom: 50px;
         }
@@ -45,15 +45,31 @@
             visibility: hidden;
         }
 
+        #hp-gif
+        {
+            height: 150px;
+            width: 150px;
+            visibility: hidden;
+        }
+
        </style>
        <script type = "text/javascript">
 
-            function changeImage(url)
+            function changeImage(url1,url2)
             {
                 var wand_movement = document.getElementById("wand-mvmnt");
                 console.log(wand_movement);
                 wand_movement.style.visibility = "visible";
-                wand_movement.src = url;
+                wand_movement.src = url1;
+                changeGIF(url2);
+            }
+
+            function changeGIF(url)
+            {
+                var gif = document.getElementById("hp-gif");
+                console.log(gif);
+                gif.style.visibility = "visible";
+                gif.src = url;
             }
         </script>
 
@@ -66,15 +82,19 @@
     </div>
     <div id="buttons" class = "container">
         <div class="row">
-            <div class="col-7">
+            <div class="col">
                     <h4>Click on a spell!</h4><br>
-                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/c/ce/Disarming-charm.png/revision/latest?cb=20120711184003')" class="btn btn-primary">Expelliarmus</button> <br><br>
-                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/e/e2/Killing-curse.png/revision/latest?cb=20120517184343')" class="btn btn-success">Avada Kedavra</button> <br><br>
-                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/0/08/Stupefy_movement.png/revision/latest?cb=20130823050405')" class="btn btn-danger">Stupefy</button> <br><br>
-                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/3/35/Unlocking-spell.png/revision/latest?cb=20110924151048')" class="btn btn-warning">Alohamora</button>
+                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/c/ce/Disarming-charm.png/revision/latest?cb=20120711184003', 'https://media.giphy.com/media/13HDglTxy4zM6A/giphy.gif')" class="btn btn-primary">Expelliarmus</button> <br><br>
+                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/e/e2/Killing-curse.png/revision/latest?cb=20120517184343','https://media.giphy.com/media/pG5mKe6YiV0Qg/giphy.gif')" class="btn btn-success">Avada Kedavra</button> <br><br>
+                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/0/08/Stupefy_movement.png/revision/latest?cb=20130823050405','https://media.giphy.com/media/KjRV9FtWbsV7q/giphy.gif')" class="btn btn-danger">Stupefy</button> <br><br>
+                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/3/35/Unlocking-spell.png/revision/latest?cb=20110924151048','https://vignette.wikia.nocookie.net/harrypotter/images/3/3e/Unlocking_charm1.gif/revision/latest?cb=20140811055322')" class="btn btn-warning">Alohomora</button>
             </div>
-            <div class="col-5">
-                <h4 id="rcol-head"> Wand Movement: </h4>
+            <div class="col">
+                <h4 class=rcol-head>In Practice:</h4>
+                <img id="hp-gif" src="">
+            </div>
+            <div class="col">
+                <h4 class="rcol-head"> Wand Movement: </h4>
                 <img id="wand-mvmnt" src="">
             </div>
         </div>
