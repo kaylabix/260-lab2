@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+      <style>
+        
+        body
+        {
+            font-family: 'Lora', serif;
+        }
+
+        .heading-border
+        {
+            background-color: purple;
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin-bottom: 50px;
+        }
+
+        #head-text
+        {
+            color:yellow;
+        }
+
+        #buttons
+        {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        #rcol-head
+        {
+            margin-bottom: 50px;
+        }
+
+        #wand-mvmnt
+        {
+            height: 150px;
+            width: 150px;
+            visibility: hidden;
+        }
+
+       </style>
+       <script type = "text/javascript">
+
+            function changeImage(url)
+            {
+                var wand_movement = document.getElementById("wand-mvmnt");
+                console.log(wand_movement);
+                wand_movement.style.visibility = "visible";
+                wand_movement.src = url;
+            }
+        </script>
+
+    </head>
+    <body>
+    <div class= "heading-border">
+       <div class= "container">
+          <h1 id="head-text"> Harry Potter Spells! </h1>
+       </div>
+    </div>
+    <div id="buttons" class = "container">
+        <div class="row">
+            <div class="col-7">
+                    <h4>Click on a spell!</h4><br>
+                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/c/ce/Disarming-charm.png/revision/latest?cb=20120711184003')" class="btn btn-primary">Expelliarmus</button> <br><br>
+                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/e/e2/Killing-curse.png/revision/latest?cb=20120517184343')" class="btn btn-success">Avada Kedavra</button> <br><br>
+                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/0/08/Stupefy_movement.png/revision/latest?cb=20130823050405')" class="btn btn-danger">Stupefy</button> <br><br>
+                    <button type="button" onclick="changeImage('https://vignette.wikia.nocookie.net/harrypotter/images/3/35/Unlocking-spell.png/revision/latest?cb=20110924151048')" class="btn btn-warning">Alohamora</button>
+            </div>
+            <div class="col-5">
+                <h4 id="rcol-head"> Wand Movement: </h4>
+                <img id="wand-mvmnt" src="">
+            </div>
+        </div>
+
+    </div>
+    </body>
+    </html>
